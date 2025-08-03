@@ -11,9 +11,9 @@ app.use(express.json());
 app.use(cors());
 
 const PORT = process.env.PORT;
+app.use("/api/books", bookRoute);
 
 const __dirname = path.resolve();
-
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/frontend/dist")));
   app.get("/*", (_, res) => {
@@ -25,5 +25,3 @@ app.listen(PORT, () => {
   connectDB();
   console.log(`Server is running on port ${PORT}`);
 });
-
-app.use("/api/books", bookRoute);

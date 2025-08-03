@@ -66,7 +66,7 @@ const BookCard = ({ book }) => {
             {new Date(book.updatedAt || book.createdAt).toLocaleDateString()}
           </h2>
           <hr className="bg-blue-200 h-[2px] text-blue-100" />
-          <div className="flex items-center justify-around mt-3">
+          <div className="flex items-center justify-around mt-2 flex-wrap space-y-2">
             <Link to={`/${book._id}`}>
               <button className="text-xl mr-2 text-blue-700 hover:text-lbue-800 transition-all duration-300 hover:-translate-y-1 border border-blue-700 px-4 p-2 rounded-lg cursor-pointer">
                 <span className="flex items-center">
